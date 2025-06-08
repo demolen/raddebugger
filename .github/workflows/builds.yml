@@ -27,12 +27,9 @@ jobs:
         run: |
           call "C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Auxiliary\Build\vcvarsall.bat" x64
           call build ${{ matrix.target }} ${{ matrix.compiler }} ${{ matrix.mode }} || exit /b 1
-      - name: Show build output tree
-        shell: cmd
-        run: dir /s /b build
-      - name: Upload build artifact
+
+      - name: Upload raddbg.exe
         uses: actions/upload-artifact@v4
         with:
           name: raddbg-msvc-release
-          path: |
-            build\raddbg\msvc\release\raddbg.exe
+          path: build\raddbg.exe
