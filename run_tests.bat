@@ -19,3 +19,4 @@ echo --- running tests ---------------------------------------------------------
 pushd build
 call tester.exe --test_data:%test_data_folder%
 popd
+:
