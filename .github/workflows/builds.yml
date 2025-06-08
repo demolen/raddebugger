@@ -36,7 +36,7 @@ jobs:
           call build ${{ matrix.target }} ${{ matrix.compiler }} ${{ matrix.mode }} || exit /b 1
       - name: Upload build artifacts
         if: matrix.mode == 'release'
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: ${{ matrix.target }}-${{ matrix.compiler }}-${{ matrix.mode }}
           path: |
